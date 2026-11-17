@@ -1,0 +1,9 @@
+{
+  "version": "3.2.0",
+  "date": "2026-11-17",
+  "board": "ESP32-CAM",
+  "notes": "Full 42 Living Emotions, 1-Octave Pastel Piano, 7 Chiptunes, Pomodoro Study Companion, Robot Babble & Piezo Volume Boost!",
+  "binUrl": "./YETI_ESP32_CAM_LATEST.bin",
+  "camBinUrl": "./YETI_ESP32_CAM_LATEST.bin",
+  "c3BinUrl": "./YETI_ESP32_C3_LATEST.bin"
+}
