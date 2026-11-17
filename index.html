@@ -42,6 +42,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
@@ -50,6 +51,11 @@
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
+      width: 100%;
+    }
+
+    img, video, svg {
+      max-width: 100%;
     }
 
     h1, h2, h3, .brand-font {
@@ -135,7 +141,46 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 12px 20px 18px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .mobile-drawer.open {
+      display: flex;
+    }
+
+    .mobile-drawer a {
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--canvas);
+      border: 1px solid var(--border);
     }
 
     .btn {
@@ -956,6 +1001,14 @@
       font-size: 0.9rem;
     }
 
+    .hero-grid > *,
+    .variants-grid > *,
+    .video-showcase > *,
+    .app-showcase > *,
+    .specs-grid > * {
+      min-width: 0;
+    }
+
     @media (max-width: 940px) {
       .hero-grid,
       .variants-grid,
@@ -963,9 +1016,235 @@
       .app-showcase,
       .specs-grid {
         grid-template-columns: 1fr;
+        gap: 28px;
       }
       .nav-links {
         display: none;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+      .hero {
+        padding: 32px 0 48px;
+      }
+      section {
+        padding: 52px 0;
+      }
+      .app-showcase {
+        padding: 28px 22px;
+      }
+      .app-phones {
+        margin-top: 8px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        padding: 0 16px;
+      }
+      .nav-inner {
+        height: 64px;
+        gap: 8px;
+      }
+      .brand {
+        font-size: 1.22rem;
+        gap: 8px;
+      }
+      .brand-logo {
+        width: 34px;
+        height: 34px;
+        font-size: 1.05rem;
+        border-radius: 11px;
+      }
+      .navbar .brand-tag {
+        display: none;
+      }
+      .nav-actions .btn-sm {
+        padding: 8px 12px;
+        font-size: 0.78rem;
+      }
+      .hero h1 {
+        font-size: 2.05rem;
+        line-height: 1.15;
+      }
+      .hero-lead {
+        font-size: 0.98rem;
+        margin-bottom: 20px;
+      }
+      .eyebrow {
+        font-size: 0.72rem;
+        padding: 5px 11px;
+        margin-bottom: 12px;
+      }
+      .hero-cta-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .hero-cta-row .btn {
+        width: 100%;
+        padding: 12px 18px;
+        font-size: 0.92rem;
+      }
+      .yeti-stage-card {
+        padding: 18px 14px;
+        border-radius: 26px;
+      }
+      .stage-top-bar {
+        margin-bottom: 12px;
+        gap: 8px;
+      }
+      .stage-title {
+        font-size: 0.75rem;
+      }
+      .variant-tabs-mini {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .variant-tab-btn {
+        flex: 1 1 30%;
+        min-width: 90px;
+        font-size: 0.7rem;
+        padding: 7px 4px;
+      }
+      .yeti-body-shell {
+        width: 256px;
+        height: 224px;
+        border-radius: 98px 98px 80px 80px;
+        margin: 28px 0 18px;
+      }
+      .yeti-horn-left, .yeti-horn-right {
+        width: 40px;
+        height: 48px;
+        top: -13px;
+      }
+      .yeti-horn-left { left: 18px; }
+      .yeti-horn-right { right: 18px; }
+      .yeti-tuft span {
+        width: 15px;
+        height: 22px;
+      }
+      .yeti-cream-bezel {
+        width: 192px;
+        height: 114px;
+        padding: 10px;
+        border-radius: 24px;
+      }
+      .yeti-body-shell.display-13 .yeti-cream-bezel {
+        width: 222px;
+        height: 132px;
+        border-radius: 28px;
+      }
+      .yeti-feet {
+        gap: 54px;
+        bottom: -12px;
+      }
+      .yeti-foot {
+        width: 56px;
+        height: 24px;
+      }
+      .yeti-pro-bubble {
+        top: -46px;
+        max-width: 250px;
+        white-space: normal;
+        text-align: center;
+        font-size: 0.72rem;
+        line-height: 1.3;
+        padding: 6px 12px;
+      }
+      .color-swatch {
+        width: 28px;
+        height: 28px;
+      }
+      .emo-chip {
+        font-size: 0.74rem;
+        padding: 6px 10px;
+      }
+      .section-header {
+        margin-bottom: 28px;
+      }
+      .section-header h2 {
+        font-size: 1.75rem;
+      }
+      .section-header p {
+        font-size: 0.94rem;
+      }
+      .variant-card {
+        padding: 24px 18px;
+        border-radius: 24px;
+      }
+      .price-tag {
+        font-size: 2.1rem;
+      }
+      .video-showcase {
+        padding: 16px;
+        border-radius: 24px;
+        gap: 20px;
+      }
+      .video-frame {
+        border-radius: 16px;
+      }
+      .features-grid,
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .feature-card {
+        padding: 20px 18px;
+      }
+      .app-showcase {
+        padding: 22px 16px;
+        border-radius: 26px;
+      }
+      .app-feature-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin: 16px 0 20px;
+      }
+      .app-phones {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 14px 4px 8px;
+        gap: 12px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .phone-frame {
+        flex: 0 0 62%;
+        max-width: 200px;
+        scroll-snap-align: center;
+      }
+      .phone-frame:nth-child(2) {
+        transform: none;
+      }
+      .spec-row {
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 16px;
+      }
+      .spec-val {
+        text-align: left;
+      }
+      .app-cta-row {
+        flex-direction: column;
+        align-items: stretch !important;
+      }
+      .app-cta-row .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .yeti-body-shell {
+        width: 228px;
+        height: 204px;
+      }
+      .yeti-cream-bezel {
+        width: 174px;
+        height: 104px;
+      }
+      .yeti-body-shell.display-13 .yeti-cream-bezel {
+        width: 198px;
+        height: 118px;
       }
     }
   </style>
@@ -992,9 +1271,21 @@
 
       <div class="nav-actions">
         <a href="./downloads/YetiCompanion.apk" download class="btn btn-primary btn-sm">
-          📲 Download App (.APK)
+          📲 Download App
         </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+          ☰
+        </button>
       </div>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="#variants" onclick="closeMobileMenu()">🛍️ Variants & Pricing (From ₹1,500)</a>
+      <a href="#commercial" onclick="closeMobileMenu()">🎬 Watch Commercial</a>
+      <a href="#features" onclick="closeMobileMenu()">🐾 Features</a>
+      <a href="#gallery" onclick="closeMobileMenu()">📸 Photos in Action</a>
+      <a href="#app" onclick="closeMobileMenu()">📱 Companion App</a>
+      <a href="#specs" onclick="closeMobileMenu()">🔧 Specifications</a>
     </div>
   </header>
 
@@ -1497,7 +1788,7 @@
             <div class="app-feat-pill">🍅 Pomodoro Study Timer</div>
           </div>
 
-          <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+          <div class="app-cta-row" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
             <a href="./downloads/YetiCompanion.apk" download class="btn btn-primary">
               📥 Download YetiCompanion.apk (Android)
             </a>
@@ -1608,6 +1899,18 @@
 
   <!-- ==================== VISUAL CUSTOMIZER & OLED PREVIEW SCRIPT ==================== -->
   <script>
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      const btn = document.getElementById('mobileMenuBtn');
+      const isOpen = drawer.classList.toggle('open');
+      btn.textContent = isOpen ? '✕' : '☰';
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileDrawer').classList.remove('open');
+      document.getElementById('mobileMenuBtn').textContent = '☰';
+    }
+
     // Purely visual customizer & OLED preview for website visitors
     // (/firmware/manifest.json and .bin binaries are hosted silently at ./firmware/ for the Mobile App's OTA updater)
     let currentDemoEmotion = 'HAPPY';
